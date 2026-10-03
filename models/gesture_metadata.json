@@ -1,0 +1,143 @@
+{
+    "classes": [
+        "NEUTRAL",
+        "NEXT_PAGE",
+        "NXT_PAGE",
+        "POINTER",
+        "PREVIOUS_PAGE",
+        "ZOOM_IN",
+        "ZOOM_OUT"
+    ],
+    "samples": 2795,
+    "accuracy": 0.4347048300536673,
+    "report": {
+        "NEUTRAL": {
+            "precision": 0.17647058823529413,
+            "recall": 0.2,
+            "f1-score": 0.1875,
+            "support": 60.0
+        },
+        "NEXT_PAGE": {
+            "precision": 0.5563380281690141,
+            "recall": 0.5448275862068965,
+            "f1-score": 0.5505226480836237,
+            "support": 145.0
+        },
+        "NXT_PAGE": {
+            "precision": 0.8378378378378378,
+            "recall": 0.8857142857142857,
+            "f1-score": 0.8611111111111112,
+            "support": 35.0
+        },
+        "POINTER": {
+            "precision": 0.2564102564102564,
+            "recall": 0.16666666666666666,
+            "f1-score": 0.20202020202020202,
+            "support": 60.0
+        },
+        "PREVIOUS_PAGE": {
+            "precision": 0.4536082474226804,
+            "recall": 0.4489795918367347,
+            "f1-score": 0.4512820512820513,
+            "support": 98.0
+        },
+        "ZOOM_IN": {
+            "precision": 0.4659090909090909,
+            "recall": 0.4823529411764706,
+            "f1-score": 0.47398843930635837,
+            "support": 85.0
+        },
+        "ZOOM_OUT": {
+            "precision": 0.29545454545454547,
+            "recall": 0.34210526315789475,
+            "f1-score": 0.3170731707317073,
+            "support": 76.0
+        },
+        "accuracy": 0.4347048300536673,
+        "macro avg": {
+            "precision": 0.4345755134912456,
+            "recall": 0.4386637621084213,
+            "f1-score": 0.4347853746478648,
+            "support": 559.0
+        },
+        "weighted avg": {
+            "precision": 0.4337685429638735,
+            "recall": 0.4347048300536673,
+            "f1-score": 0.4328230846592445,
+            "support": 559.0
+        }
+    },
+    "cm": [
+        [
+            12,
+            9,
+            0,
+            5,
+            8,
+            10,
+            16
+        ],
+        [
+            12,
+            79,
+            6,
+            8,
+            12,
+            14,
+            14
+        ],
+        [
+            0,
+            4,
+            31,
+            0,
+            0,
+            0,
+            0
+        ],
+        [
+            11,
+            11,
+            0,
+            10,
+            8,
+            7,
+            13
+        ],
+        [
+            9,
+            17,
+            0,
+            7,
+            44,
+            10,
+            11
+        ],
+        [
+            8,
+            13,
+            0,
+            4,
+            11,
+            41,
+            8
+        ],
+        [
+            16,
+            9,
+            0,
+            5,
+            14,
+            6,
+            26
+        ]
+    ],
+    "recommendations": [
+        "Collect more varied samples for NEUTRAL (F1: 0.19)",
+        "Collect more varied samples for NEXT_PAGE (F1: 0.55)",
+        "Collect more varied samples for POINTER (F1: 0.20)",
+        "Collect more varied samples for PREVIOUS_PAGE (F1: 0.45)",
+        "Collect more varied samples for ZOOM_IN (F1: 0.47)",
+        "Collect more varied samples for ZOOM_OUT (F1: 0.32)"
+    ]
+}

@@ -1,0 +1,24 @@
+# GUI Settings
+WINDOW_TITLE = "Touchless PDF & Presentation Controller"
+WINDOW_SIZE = "1200x800"
+
+# Webcam Settings
+CAMERA_ID = 0
+FRAME_WIDTH = 640
+FRAME_HEIGHT = 480
+
+# Hand Tracking Settings
+MIN_DETECTION_CONFIDENCE = 0.7
+MIN_TRACKING_CONFIDENCE = 0.7
+
+# Gesture Settings
+SWIPE_THRESHOLD = 50       
+SWIPE_COOLDOWN = 1.0       
+PINCH_THRESHOLD_MIN = 30   
+PINCH_THRESHOLD_MAX = 100  
+PINCH_COOLDOWN = 0.2       
+
+# PDF Settings
+MAX_ZOOM = 3.0
+MIN_ZOOM = 0.5
+ZOOM_STEP = 0.1

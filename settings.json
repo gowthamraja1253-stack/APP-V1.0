@@ -1,0 +1,29 @@
+{
+    "pointer_size": 8,
+    "pointer_style": "Dot",
+    "pointer_trail": false,
+    "trail_length": 10,
+    "swipe_cooldown": 1.0,
+    "pinch_cooldown": 0.2,
+    "camera_id": 0,
+    "show_landmarks": true,
+    "show_gesture_guide": true,
+    "page_timer": true,
+    "recent_pdfs": [
+        "/Users/nivedhagowtham/Downloads/first Review (1).pdf",
+        "/Users/nivedhagowtham/Downloads/Rural Health Link Pitch Deck (1).pdf"
+    ],
+    "swipe_distance_threshold": 0.15,
+    "swipe_direction_ratio": 1.5,
+    "swipe_frame_window": 10,
+    "pinch_start_threshold": 0.3,
+    "pinch_release_threshold": 0.5,
+    "landmark_smoothing_alpha": 0.5,
+    "debug_mode": false,
+    "recognition_method": "GEOMETRIC RULES",
+    "ml_confidence_threshold": 0.85,
+    "ml_history_size": 7,
+    "ml_cooldown": 0.8,
+    "training_samples": 300,
+    "swipe_threshold": 50
+}
