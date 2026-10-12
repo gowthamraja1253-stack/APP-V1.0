@@ -96,8 +96,17 @@ class TrainingStudio(ctk.CTkToplevel):
                 self.update_stats()
         elif active_tab == "Test Model" and landmarks:
             pred, conf = self.ml_engine.predict(landmarks)
-            self.test_pred_label.configure(text=f"Prediction: {pred} (Canned: {canned_gesture})")
-            self.test_conf_label.configure(text=f"Confidence: {conf*100:.1f}%")
+            action_map = {
+                "NEXT_PAGE": "Next Page (Flip Forward)",
+                "PREVIOUS_PAGE": "Previous Page (Flip Back)",
+                "ZOOM_IN": "Zoom In",
+                "ZOOM_OUT": "Zoom Out",
+                "POINTER": "Pointer Dot",
+                "NEUTRAL": "None (Resting)"
+            }
+            mapped = action_map.get(pred, "None")
+            self.test_pred_label.configure(text=f"Prediction: {pred}\nAction: {mapped}")
+            self.test_conf_label.configure(text=f"Confidence: {conf*100:.1f}% | Canned: {canned_gesture}")
         elif active_tab == "Test Model" and not landmarks:
             self.test_pred_label.configure(text="Prediction: NO HAND")
             self.test_conf_label.configure(text="Confidence: 0%")
@@ -126,7 +135,12 @@ class TrainingStudio(ctk.CTkToplevel):
         
         success, result = self.ml_engine.train_model()
         if success:
-            res_str = f"TRAINING COMPLETE\n"
+            # Automatically activate HYBRID mode so the trained model is active immediately!
+            self.settings.set("recognition_method", "HYBRID")
+            self.settings.save()
+            
+            res_str = f"TRAINING COMPLETE & ACTIVATED!\n"
+            res_str += f"Current App Mode: HYBRID (Trained Model + Smart Swipes)\n"
             res_str += f"Accuracy: {result['accuracy']*100:.1f}%\n"
             res_str += f"Total Samples: {result['samples']}\n"
             res_str += f"Classes: {', '.join(result['classes'])}\n\n"

@@ -82,6 +82,16 @@ class MLEngine:
         return augmented
 
     def save_sample(self, label, landmarks):
+        # Standardize aliases
+        if label in ["NXT_PAGE", "NEXT"]:
+            label = "NEXT_PAGE"
+        elif label in ["PREV_PAGE", "PREV"]:
+            label = "PREVIOUS_PAGE"
+        elif label in ["ZOOMIN"]:
+            label = "ZOOM_IN"
+        elif label in ["ZOOMOUT"]:
+            label = "ZOOM_OUT"
+
         features = self.normalize_landmarks(landmarks)
         if not features: return False
         
@@ -125,7 +135,12 @@ class MLEngine:
             next(reader, None)
             for row in reader:
                 if not row: continue
-                y.append(row[0])
+                lbl = row[0]
+                if lbl in ["NXT_PAGE", "NEXT"]: lbl = "NEXT_PAGE"
+                elif lbl in ["PREV_PAGE", "PREV"]: lbl = "PREVIOUS_PAGE"
+                elif lbl in ["ZOOMIN"]: lbl = "ZOOM_IN"
+                elif lbl in ["ZOOMOUT"]: lbl = "ZOOM_OUT"
+                y.append(lbl)
                 X.append([float(val) for val in row[1:]])
                 
         if len(X) < 10:
@@ -140,7 +155,7 @@ class MLEngine:
                 aug_X_train.append(a_feat)
                 aug_y_train.append(label)
                 
-        clf = RandomForestClassifier(n_estimators=100, max_depth=10, random_state=42)
+        clf = RandomForestClassifier(n_estimators=100, max_depth=12, class_weight='balanced', random_state=42)
         clf.fit(aug_X_train, aug_y_train)
         
         y_pred = clf.predict(X_test)

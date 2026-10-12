@@ -204,7 +204,8 @@ class MainApp:
                     if status == "CONFIRMED":
                         self.handle_gesture(gesture, data)
                         
-                    self.gui.gesture_status.configure(text=f"Gesture: {gesture}\nStatus: {status}")
+                    method_str = self.settings.get("recognition_method", "HYBRID")
+                    self.gui.gesture_status.configure(text=f"Mode: {method_str}\nGesture: {gesture}\nStatus: {status}")
                     
                     if self.settings.get("debug_mode"):
                         dbg_text = f"DEBUG MODE\nHand: {handedness}\nScale: {debug_data.get('hand_scale', 0)}\nPinch: {debug_data.get('norm_pinch', 0)}\ndx: {debug_data.get('swipe_dx', 0)}\nCanned: {canned_gesture}"

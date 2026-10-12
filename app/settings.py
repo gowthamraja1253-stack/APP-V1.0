@@ -17,19 +17,19 @@ DEFAULT_SETTINGS = {
     "recent_pdfs": [],
     
     # Advanced Gesture Thresholds
-    "swipe_distance_threshold": 0.15,
-    "swipe_direction_ratio": 1.5,
-    "swipe_frame_window": 10,
-    "pinch_start_threshold": 0.3,
-    "pinch_release_threshold": 0.5,
+    "swipe_distance_threshold": 0.12,
+    "swipe_direction_ratio": 1.1,
+    "swipe_frame_window": 15,
+    "pinch_start_threshold": 0.28,
+    "pinch_release_threshold": 0.45,
     "landmark_smoothing_alpha": 0.5,
     "debug_mode": False,
     
     # ML Trained Recognition Settings
     "recognition_method": "HYBRID", # "MEDIA_PIPE_PRETRAINED", "TRAINED MODEL", "HYBRID", "GEOMETRIC RULES"
-    "ml_confidence_threshold": 0.85,
-    "ml_history_size": 7,
-    "ml_cooldown": 0.8,
+    "ml_confidence_threshold": 0.45,
+    "ml_history_size": 4,
+    "ml_cooldown": 0.6,
     "training_samples": 300
 }
 
